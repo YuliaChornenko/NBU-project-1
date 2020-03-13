@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('../data/nbu.csv')
+df = pd.read_csv('../data/data.csv')
 
 df.drop(df[(df.category == '1') | (df.category == '0')].index, inplace=True)
 
@@ -11,4 +11,4 @@ hooligan = df[(df.category == 'Hooligan')].sample(frac=1).reset_index(drop=True)
 siteandcoins = pd.read_csv('../data/coins.csv')[:50]
 
 DF = pd.concat([positive, negative, hotline, hooligan, siteandcoins])
-DF.to_csv('data/category.csv', index=False)
+DF.to_csv('../data/category.csv', index=False)
