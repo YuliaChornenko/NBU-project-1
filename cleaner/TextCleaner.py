@@ -1,6 +1,8 @@
-import pymorphy2
 import re
 import pandas as pd
+import pymorphy2
+from nltk.corpus import stopwords
+import users_stopwords
 
 class CleanText:
 
@@ -16,8 +18,10 @@ class CleanText:
         ma = pymorphy2.MorphAnalyzer()
 
         text = str(text).lower()
+        text = ' '.join([word for word in text.split() if word not in stopwords.words('russian')])
+        text = ' '.join([word for word in text.split() if word not in users_stopwords.uk_stopwords])
         text = re.sub('\-\s\r\n\s{1,}|\-\s\r\n|\r\n', '', text)
-        text = re.sub('[.,:;_%©?*,!@#$%^&()]|[+=]|[]]|[/]|"|\s{2,}|-', ' ', text)
+        text = re.sub('[.,:;_%©№?*,!@#$%^&()\d]|[+=]|[\[][]]|[/]|"|\s{2,}|-', ' ', text)
         text = " ".join(ma.parse(word)[0].normal_form for word in text.split())
         text = ' '.join(word for word in text.split() if len(word) > 3)
 
@@ -73,16 +77,29 @@ class CleanText:
 
         return df_new
 
-    # def open_file(file):
-    #     list_text = []
-    #     with open(file, encoding='utf-8') as f:
-    #         for line in f:
-    #             if line.strip().split(' ') == ['']:
-    #                 continue
-    #             match = re.findall(r'[\*]{3}(\w+)[\*]{3}', line)
-    #             new_line = ' '.join(line.strip().split(' '))
-    #             text = re.sub('\n', '', new_line)
-    #             print(match)
-    #             list_text.append([text])
-    #     print(list_text)
+    @staticmethod
+    def open_file(file):
+        '''
+        Read file and create DataFrame
+
+        :param file: File which will be read
+        :return: DataFrame with file entries
+        '''
+
+        text = []
+        list_text = []
+        with open(file, encoding='utf-8') as f:
+            f = f.readlines()
+            print(f)
+            for sentence in f:
+                if sentence != '***\n':
+                    sentence = re.sub('\n', '', sentence)
+                    text.append(sentence)
+                else:
+                    list_text.append([' '.join(text)])
+                    text = []
+
+        df = pd.DataFrame(list_text)
+
+        return df
 

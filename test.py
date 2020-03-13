@@ -1,4 +1,8 @@
-# import pandas as pd
-#
+import pandas as pd
+import cleaner.TextCleaner as tc
 # df = pd.read_pickle('data/dataframe.pkl')
-# print(df.description[100])
+# n = 1
+# print(df.description[n], '\n', df.category[n])
+
+file = 'data/letters1.txt'
+tc.CleanText.open_file(file)
