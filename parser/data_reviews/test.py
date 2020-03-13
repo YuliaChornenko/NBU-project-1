@@ -1,8 +1,4 @@
-from bs4 import BeautifulSoup
-import requests as req
-import lxml
 import pandas as pd
-
 from parser.data_reviews.pos_and_neg import ReviewsURLScraper
 from parser.data_reviews.name_of_pages import banks_url, pos_url, reviews_page, hotlines_page
 from parser.data_reviews.toxic_data import toxic_list

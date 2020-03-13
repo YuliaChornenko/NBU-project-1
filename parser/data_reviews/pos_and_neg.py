@@ -1,15 +1,14 @@
 from bs4 import BeautifulSoup
 import requests as req
-import lxml
 
 from parser.Scraper import ReviewsHandler
 
 
 class ReviewsURLScraper(ReviewsHandler):
-
     """
     Inherit ReviewsHandler for minfin.com.ua and about.pumb.ua
     """
+
     @staticmethod
     def get_reviews_url(banks_url=None, reviews=list(), page=None):
 
