@@ -11,7 +11,7 @@ for line in df.text:
     match = re.search('[?]', line)
     try:
         match = re.search('[?]', line)
-        if (df.category[i] == 'Positive'  or df.category[i] == 'Negative') and match != None :
+        if (df.category[i] == 'Positive' or df.category[i] == 'Negative') and match != None :
             df.drop(df.index[i])
     except:
         None

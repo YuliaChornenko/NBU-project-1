@@ -1,17 +1,18 @@
 from bs4 import BeautifulSoup
 import requests as req
 
-from parser.Scraper import ReviewsHandler
 
-
-class ReviewsURLScraper(ReviewsHandler):
-    """
-    Inherit ReviewsHandler for minfin.com.ua and about.pumb.ua
-    """
+class ReviewsURLScraper:
 
     @staticmethod
     def get_reviews_url(banks_url=None, reviews=list(), page=None):
+        """
 
+        :param banks_url: link of main page
+        :param reviews: new list
+        :param page: string
+        :return: list oof banks links
+        """
         resp = req.get(banks_url+'/banks/top/')
         soup = BeautifulSoup(resp.text, 'lxml')
         top_20_banks = soup.find_all('tr')[3:23]
@@ -23,6 +24,12 @@ class ReviewsURLScraper(ReviewsHandler):
 
     @staticmethod
     def get_pos_and_neg_reviews(reviews_url=None, reviews_list=list()):
+        """
+
+        :param reviews: list of url
+        :param reviews_list: new list
+        :return: list positive and negative comments
+        """
         for url in reviews_url:
             resp2 = req.get(url)
             soup2 = BeautifulSoup(resp2.text, 'lxml')
@@ -41,6 +48,12 @@ class ReviewsURLScraper(ReviewsHandler):
 
     @staticmethod
     def get_positive(pos_url=None, positive_list=list()):
+        """
+
+        :param pos_url: only positive comments link
+        :param positive_list: new list
+        :return: list of positive comments
+        """
         resp4 = req.get(pos_url)
         soup4 = BeautifulSoup(resp4.text, 'lxml')
         positive = soup4.find_all('div', 'txt-block')
@@ -54,6 +67,12 @@ class ReviewsURLScraper(ReviewsHandler):
 
     @staticmethod
     def get_hotlines(hotlines_url=None, hotlines_list=list()):
+        """
+
+        :param hotlines_url: list of link
+        :param hotlines_list: new list
+        :return: list of hotlines
+        """
         for url in hotlines_url:
             resp3 = req.get(url)
             soup3 = BeautifulSoup(resp3.text, 'lxml')
