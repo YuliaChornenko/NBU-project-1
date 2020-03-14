@@ -1,22 +1,23 @@
-import pandas as pd
 import requests as req
 from bs4 import BeautifulSoup
 import re
-import lxml
 
 
 class GetOffers:
     """
     Offers parsing
     """
+
     @staticmethod
     def get_offers_1(link=None, offers_list=list()):
         """
-        get offers from 1th site
+        Get offers from 1th site
+
         :param link: site with offers
         :param offers_list: empty list
         :return: list of offers
         """
+
         for i in range(1, 5):
            resp = req.get(link + str(i))
            soup = BeautifulSoup(resp.text, 'lxml')
@@ -31,11 +32,13 @@ class GetOffers:
     @staticmethod
     def get_offers_2(link=None, offers_list=list()):
         """
-        get offers from 2d site
+        Get offers from 2d site
+
         :param link: site with offers
         :param offers_list: empty list
         :return: list of offers
         """
+
         resp = req.get(link)
         soup = BeautifulSoup(resp.text, 'lxml')
         offers = soup.find_all('p')
@@ -49,7 +52,8 @@ class GetOffers:
     @staticmethod
     def get_offers_3(link=None, offers_list=list()):
         """
-        get offers from 3th site
+        Get offers from 3th site
+
         :param link: site with offers
         :param offers_list: empty list
         :return: list of offers

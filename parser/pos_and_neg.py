@@ -6,15 +6,18 @@ class ReviewsURLScraper:
     """
     Parsing positive, negative comments, hotlines from minfin.com.ua and positive comments from about.pumb.ua
     """
+
     @staticmethod
     def get_reviews_url(banks_url=None, reviews=list(), page=None):
         """
-        get list of top 20 banks list from minfin.com.ua
+        Get list of top 20 banks list from minfin.com.ua
+
         :param banks_url: link of main page
         :param reviews: new list
         :param page: string
         :return: list of banks links
         """
+
         resp = req.get(banks_url+'/banks/top/')
         soup = BeautifulSoup(resp.text, 'lxml')
         top_20_banks = soup.find_all('tr')[3:23]
@@ -27,11 +30,13 @@ class ReviewsURLScraper:
     @staticmethod
     def get_pos_and_neg_reviews(reviews_url=None, reviews_list=list()):
         """
-        parsing list of positive and negative comments
-        :param reviews: list of url
+        Parsing list of positive and negative comments
+
+        :param reviews_url: list of url
         :param reviews_list: new list
         :return: list positive and negative comments
         """
+
         for url in reviews_url:
             for i in range(1, 2):
                 resp2 = req.get(url+str(i))
@@ -52,11 +57,13 @@ class ReviewsURLScraper:
     @staticmethod
     def get_positive(pos_url=None, positive_list=list()):
         """
-        parsing list of positive comments
+        Parsing list of positive comments
+
         :param pos_url: only positive comments link
         :param positive_list: new list
         :return: list of positive comments
         """
+
         resp4 = req.get(pos_url)
         soup4 = BeautifulSoup(resp4.text, 'lxml')
         positive = soup4.find_all('div', 'txt-block')
@@ -71,11 +78,13 @@ class ReviewsURLScraper:
     @staticmethod
     def get_hotlines(hotlines_url=None, hotlines_list=list()):
         """
-        parsing list of hotlines
+        Parsing list of hotlines
+
         :param hotlines_url: list of link
         :param hotlines_list: new list
         :return: list of hotlines
         """
+
         for url in hotlines_url:
             resp3 = req.get(url)
             soup3 = BeautifulSoup(resp3.text, 'lxml')
