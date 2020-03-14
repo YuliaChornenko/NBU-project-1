@@ -2,11 +2,13 @@ import pandas as pd
 
 
 class ToxicComments:
-
+    """
+    Creating list of toxic comments from default file
+    """
     @staticmethod
     def read_file(file_name=None):
         """
-
+        reading default file
         :param file_name: file with toxic comments
         :return: read file
         """
@@ -18,7 +20,7 @@ class ToxicComments:
     @staticmethod
     def create_toxic_list(fixed_df=None, new_toxic_list=list()):
         """
-
+        creating list of degree of toxicity
         :param fixed_df: read file
         :param new_toxic_list: empty list
         :return: new list with toxic
@@ -31,7 +33,7 @@ class ToxicComments:
     @staticmethod
     def create_text_list(fixed_df=None, new_text_list=list()):
         """
-
+        creating list of comment text
         :param fixed_df: read file
         :param new_text_list: empty list
         :return: new list with text
@@ -44,7 +46,7 @@ class ToxicComments:
     @staticmethod
     def create_final_toxic(new_toxic=list(), new_text_list=None, new_toxic_list=None):
         """
-
+        creating list of the most toxiс comments
         :param new_toxic: empty list
         :param new_text_list:
         :param new_toxic_list:

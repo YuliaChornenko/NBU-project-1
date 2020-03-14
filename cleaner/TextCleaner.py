@@ -61,19 +61,20 @@ class CleanText:
         return df
 
     @staticmethod
-    def prepare_df(df):
+    def prepare_df(df, pickle):
         '''
         Create new DataFrame with cleaned text and replaced categories (using functions 'clean_category' and 'prepare_text')
 
         :param df: Default DataFrame
+        :param pickle: Way to dataframe.pkl
         :return: New DataFrame with clean text and replaced categories
         '''
 
         if 'category_code' not in df.columns:
             df = CleanText.clean_category(df)
         c_text = CleanText.prepare_text(df)
-        df.to_pickle('data/dataframe.pkl')
-        df_new = pd.read_pickle('data/dataframe.pkl')
+        df.to_pickle(pickle)
+        df_new = pd.read_pickle(pickle)
 
         return df_new
 
@@ -102,4 +103,3 @@ class CleanText:
         df = pd.DataFrame(list_text)
 
         return df
-

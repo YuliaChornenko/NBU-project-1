@@ -37,11 +37,11 @@ model.compile(loss='binary_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
 
-print (model.summary())
+print(model.summary())
 
 # обучаем
 batch_size = 32
-epochs = 1
+epochs = 10
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,
