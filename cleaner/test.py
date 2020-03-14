@@ -13,7 +13,6 @@ for line in df.text:
         match = re.search('[?]', line)
         if (df.category[i] == 'Positive'  or df.category[i] == 'Negative') and match != None :
             df.drop(df.index[i])
-            print(line)
     except:
         None
 
