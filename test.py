@@ -20,22 +20,17 @@ import cleaner.TextCleaner as tc
 # print(morph.parse(str1))
 
 
-df = pd.read_csv('data/coins.csv')
+df = pd.read_csv('data/data.csv')
 ukr = 0
 rus = 0
 m=0
 d=0
 i = df[(df.category == 'Positive')]
 k = df[(df.category == 'Negative')]
-for line in df.text:
+for line in i.text:
     if str(detect(line)) == 'uk':
         ukr +=1
     elif str(detect(line)) == 'ru':
         rus +=1
-    else:
-        d+=1
-        print(m)
-    m+=1
 
-print(ukr,rus,d)
-print(df.text[26])
+print(ukr,rus)

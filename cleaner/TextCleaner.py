@@ -67,6 +67,27 @@ class CleanText:
         return df
 
     @staticmethod
+    def detect_lang(df, category, n):
+
+        ukr_list = list()
+        rus_list = list()
+        cat_list = list()
+        cat = df[(df.category == category)]
+        for line in cat.text:
+            if str(detect(line)) == 'uk':
+                if len(ukr_list) < round(n/2):
+                    ukr_list.append(line)
+            elif str(detect(line)) == 'ru':
+                if len(rus_list) < round(n/2):
+                    rus_list.append(line)
+
+        for categ in range(n):
+            cat_list.append(category)
+
+        return pd.DataFrame({'text': ukr_list + rus_list,
+                            'category': cat_list})
+
+    @staticmethod
     def prepare_df(df, pickle):
         '''
         Create new DataFrame with cleaned text and replaced categories (using functions 'clean_category' and 'prepare_text')

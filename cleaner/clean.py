@@ -1,6 +1,7 @@
 import pandas as pd
 import re
 from langdetect import detect
+import cleaner.TextCleaner as tc
 
 df = pd.read_csv('../data/data.csv')
 
@@ -29,11 +30,13 @@ df.drop(df[(df.category == '1') | (df.category == '0')].index, inplace=True)
 #         rus +=1
 #
 # print(ukr,rus)
+
+
 n = 100
 
-positive = df[(df.category == 'Positive')].sample(frac=1).reset_index(drop=True)[:n]
-negative = df[(df.category == 'Negative')].sample(frac=1).reset_index(drop=True)[:n]
-hotline = df[(df.category == 'Hotline')].sample(frac=1).reset_index(drop=True)[:n]
+positive = tc.CleanText.detect_lang(df, 'Positive', n).sample(frac=1).reset_index(drop=True)
+negative = tc.CleanText.detect_lang(df, 'Negative', n).sample(frac=1).reset_index(drop=True)
+hotline = tc.CleanText.detect_lang(df, 'Hotline', n).sample(frac=1).reset_index(drop=True)
 hooligan = df[(df.category == 'Hooligan')].sample(frac=1).reset_index(drop=True)[:n]
 offer = df[(df.category == 'Offer')].sample(frac=1).reset_index(drop=True)[:n]
 siteandcoins = pd.read_csv('../data/coins.csv')[:n]
