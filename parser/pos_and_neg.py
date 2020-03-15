@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests as req
+import lxml
 
 
 class ReviewsURLScraper:
@@ -38,7 +39,7 @@ class ReviewsURLScraper:
         """
 
         for url in reviews_url:
-            for i in range(1, 2):
+            for i in range(1, 6):
                 resp2 = req.get(url+str(i))
                 soup2 = BeautifulSoup(resp2.text, 'lxml')
                 reviews1 = soup2.find_all('div', 'comment')

@@ -1,5 +1,6 @@
 import pandas as pd
 import re
+from langdetect import detect
 
 df = pd.read_csv('../data/data.csv')
 
@@ -17,7 +18,18 @@ df.drop(df[(df.category == '1') | (df.category == '0')].index, inplace=True)
 #
 #     i += 1
 
-n = 99
+# ukr = 0
+# rus = 0
+# i = df[(df.category == 'Positive')]
+# k = df[(df.category == 'Negative')]
+# for line in i.text:
+#     if str(detect(line)) == 'uk':
+#         ukr +=1
+#     elif str(detect(line)) == 'ru':
+#         rus +=1
+#
+# print(ukr,rus)
+n = 100
 
 positive = df[(df.category == 'Positive')].sample(frac=1).reset_index(drop=True)[:n]
 negative = df[(df.category == 'Negative')].sample(frac=1).reset_index(drop=True)[:n]

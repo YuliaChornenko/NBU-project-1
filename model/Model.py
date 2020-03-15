@@ -18,7 +18,7 @@ tokenizer, textSequences = tp.PrepareText.tokenizer(descriptions)
 X_train, y_train, X_test, y_test = tp.PrepareText.load_data_from_arrays(descriptions, categories, train_test_split=0.8)
 
 total_unique_words, maxSequenceLength = tp.PrepareText.max_count(descriptions, tokenizer)
-vocab_size = round(total_unique_words/10)
+vocab_size = round(total_unique_words/10) #before was round(total_unique_words/10)
 
 encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
@@ -53,7 +53,7 @@ history = model.fit(X_train, y_train,
 #сравниваем результаты
 score = model.evaluate(X_test, y_test,
                        batch_size=batch_size, verbose=1)
-model.save('model.h5')
+model.save('model/model.h5')
 print()
 print(u'Оценка теста: {}'.format(score[0]))
 print(u'Оценка точности модели: {}'.format(score[1]))
@@ -129,6 +129,6 @@ for i in range(0, len(y_softmax)):
 
 text_labels = encoder.classes_
 cnf_matrix = confusion_matrix(y_test_1d, y_pred_1d)
-plt.figure(figsize=(48, 40))
+plt.figure(figsize=(48,40))
 plot_confusion_matrix(cnf_matrix, classes=text_labels, title="Confusion matrix")
 plt.show()
