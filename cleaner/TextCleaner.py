@@ -1,8 +1,9 @@
 import re
 import pandas as pd
-import pymorphy2
 from nltk.corpus import stopwords
 import users_stopwords
+from langdetect import detect
+import pymorphy2
 
 class CleanText:
 
@@ -15,13 +16,18 @@ class CleanText:
         :return: clean text
         '''
 
-        ma = pymorphy2.MorphAnalyzer()
-
         text = str(text).lower()
         text = ' '.join([word for word in text.split() if word not in stopwords.words('russian')])
         text = ' '.join([word for word in text.split() if word not in users_stopwords.uk_stopwords])
         text = re.sub('\-\s\r\n\s{1,}|\-\s\r\n|\r\n', '', text)
         text = re.sub('[.,:;_%©№?*,!@#$%^&()\d]|[+=]|[\[][]]|[/]|"|\s{2,}|-', ' ', text)
+        lang = str(detect(text))
+        if lang == 'uk':
+            ma = pymorphy2.MorphAnalyzer(lang='uk')
+        elif lang == 'ru':
+            ma = pymorphy2.MorphAnalyzer(lang='ru')
+        else:
+            ma = pymorphy2.MorphAnalyzer()
         text = " ".join(ma.parse(word)[0].normal_form for word in text.split())
         text = ' '.join(word for word in text.split() if len(word) > 3)
 
