@@ -5,6 +5,7 @@ import users_stopwords
 from langdetect import detect
 import pymorphy2
 
+
 class CleanText:
 
     @staticmethod
@@ -68,6 +69,14 @@ class CleanText:
 
     @staticmethod
     def detect_lang(df, category, n):
+        '''
+        Create DataFrame(where half Ukrainian anf half Russian text) for a given category
+
+        :param df: DataFrame with text
+        :param category: Text definition category
+        :param n: Size of DataFrame
+        :return: DataFrame where half of the data is Ukrainian and half Russian
+        '''
 
         ukr_list = list()
         rus_list = list()

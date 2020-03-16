@@ -20,17 +20,37 @@ import cleaner.TextCleaner as tc
 # print(morph.parse(str1))
 
 
-df = pd.read_csv('data/data.csv')
-ukr = 0
-rus = 0
-m=0
-d=0
-i = df[(df.category == 'Positive')]
-k = df[(df.category == 'Negative')]
-for line in i.text:
-    if str(detect(line)) == 'uk':
-        ukr +=1
-    elif str(detect(line)) == 'ru':
-        rus +=1
+# df = pd.read_csv('data/data.csv')
+# ukr = 0
+# rus = 0
+# m=0
+# d=0
+# i = df[(df.category == 'Positive')]
+# k = df[(df.category == 'Negative')]
+# for line in i.text:
+#     if str(detect(line)) == 'uk':
+#         ukr +=1
+#     elif str(detect(line)) == 'ru':
+#         rus +=1
+#
+# print(ukr,rus)
 
-print(ukr,rus)
+
+
+
+
+from spellchecker import SpellChecker
+
+spell = SpellChecker()
+spell.word_frequency.load_text_file('ru_full.txt')
+
+
+# find those words that may be misspelled
+misspelled = spell.unknown(['ана','муыка'])
+
+for word in misspelled:
+    # Get the one most likely answer
+    print(spell.correction(word))
+
+    # Get a list of likely options
+    print(spell.candidates(word))

@@ -1,4 +1,3 @@
-import itertools
 from sklearn.metrics import confusion_matrix
 import preparer.TextPreparer as tp
 import pandas as pd
@@ -7,6 +6,7 @@ from keras.layers import Dense, Embedding, LSTM
 import matplotlib.pyplot as plt
 import numpy as np
 import way
+from model import visualization as gr
 
 df = pd.read_pickle(way.pickle)
 df = df.sample(frac=1).reset_index(drop=True)
@@ -18,7 +18,7 @@ tokenizer, textSequences = tp.PrepareText.tokenizer(descriptions)
 X_train, y_train, X_test, y_test = tp.PrepareText.load_data_from_arrays(descriptions, categories, train_test_split=0.8)
 
 total_unique_words, maxSequenceLength = tp.PrepareText.max_count(descriptions, tokenizer)
-vocab_size = round(total_unique_words/10) #before was round(total_unique_words/10)
+vocab_size = round(total_unique_words/10)
 
 encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
@@ -59,20 +59,7 @@ print(u'Оценка теста: {}'.format(score[0]))
 print(u'Оценка точности модели: {}'.format(score[1]))
 
 #эффективность обучения
-# Посмотрим на эффективность обучения
-
-plt.style.use("ggplot")
-plt.figure()
-N = epochs
-plt.plot(np.arange(0, N), history.history["loss"], label="train_loss")
-plt.plot(np.arange(0, N), history.history["val_loss"], label="val_loss")
-plt.plot(np.arange(0, N), history.history["accuracy"], label="train_acc")
-plt.plot(np.arange(0, N), history.history["val_accuracy"], label="val_acc")
-plt.title("Эффективность обучения")
-plt.xlabel("Повторения #")
-plt.ylabel("Ошибки")
-plt.legend(loc="lower left")
-plt.show()
+gr.Graphs.plot_efficiency(epochs, history)
 
 text_labels = encoder.classes_
 
@@ -82,33 +69,6 @@ for i in range(20):
     print('====================================')
     print('Правильная категория: {}'.format(y_test[i]))
     print("Определенная моделью категория: {}".format(predicted_label))
-
-def plot_confusion_matrix(cm, classes,
-                          title='Confusion matrix',
-                          cmap=plt.cm.Blues, normalize=True):
-    """
-    This function prints and plots the confusion matrix.
-    Normalization can be applied by setting `normalize=True`.
-    """
-
-    cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-
-    plt.imshow(cm, interpolation='nearest', cmap=cmap)
-    plt.title(title, fontsize=30)
-    plt.colorbar()
-    tick_marks = np.arange(len(classes))
-    plt.xticks(tick_marks, classes, rotation=45, fontsize=22)
-    plt.yticks(tick_marks, classes, fontsize=22)
-
-    fmt = '.2f'
-    thresh = cm.max() / 2.
-    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
-        plt.text(j, i, format(cm[i, j], fmt),
-                 horizontalalignment="center",
-                 color="white" if cm[i, j] > thresh else "black")
-
-    plt.ylabel('Правильная категория', fontsize=25)
-    plt.xlabel('Определенная моделью категория', fontsize=25)
 
 
 y_softmax = model.predict(X_test)
@@ -130,5 +90,5 @@ for i in range(0, len(y_softmax)):
 text_labels = encoder.classes_
 cnf_matrix = confusion_matrix(y_test_1d, y_pred_1d)
 plt.figure(figsize=(48,40))
-plot_confusion_matrix(cnf_matrix, classes=text_labels, title="Confusion matrix")
-plt.show()
+gr.Graphs.plot_confusion_matrix(cnf_matrix, classes=text_labels, title="Confusion matrix")
+
