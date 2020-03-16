@@ -42,7 +42,7 @@ print(model.summary())
 
 # обучаем
 batch_size = 32
-epochs = 10
+epochs = 11
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,
@@ -91,4 +91,3 @@ text_labels = encoder.classes_
 cnf_matrix = confusion_matrix(y_test_1d, y_pred_1d)
 plt.figure(figsize=(48,40))
 gr.Graphs.plot_confusion_matrix(cnf_matrix, classes=text_labels, title="Confusion matrix")
-
