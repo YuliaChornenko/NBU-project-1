@@ -1,10 +1,9 @@
 import re
 import pandas as pd
 from nltk.corpus import stopwords
-import users_stopwords
+from data.language import users_stopwords
 from langdetect import detect
 import pymorphy2
-from googletrans import Translator
 
 
 class CleanText:

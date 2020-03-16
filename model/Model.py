@@ -6,7 +6,7 @@ from keras.layers import Dense, Embedding, LSTM
 import matplotlib.pyplot as plt
 import numpy as np
 import way
-from model import visualization as gr
+from model.visualization import graphs as gr
 
 df = pd.read_pickle(way.pickle)
 df = df.sample(frac=1).reset_index(drop=True)
@@ -42,7 +42,7 @@ print(model.summary())
 
 # обучаем
 batch_size = 32
-epochs = 12
+epochs = 10
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,
@@ -53,7 +53,7 @@ history = model.fit(X_train, y_train,
 #сравниваем результаты
 score = model.evaluate(X_test, y_test,
                        batch_size=batch_size, verbose=1)
-model.save('model/model.h5')
+
 print()
 print(u'Оценка теста: {}'.format(score[0]))
 print(u'Оценка точности модели: {}'.format(score[1]))
