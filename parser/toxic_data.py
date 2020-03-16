@@ -21,46 +21,47 @@ class ToxicComments:
         return fixed_df
 
     @staticmethod
-    def create_toxic_list(fixed_df=None, new_toxic_list=list()):
+    def create_toxic_list(fixed_df=None):
         """
         Creating list of degree of toxicity
 
         :param fixed_df: read file
-        :param new_toxic_list: empty list
         :return: new list with toxic
         """
 
+        new_toxic_list = list()
         for ls in fixed_df['toxic']:
             new_toxic_list.append(int(ls))
 
         return new_toxic_list
 
     @staticmethod
-    def create_text_list(fixed_df=None, new_text_list=list()):
+    def create_text_list(fixed_df=None):
         """
         Creating list of comment text
 
         :param fixed_df: read file
-        :param new_text_list: empty list
         :return: new list with text
         """
 
+        new_text_list = list()
         for ls in fixed_df['text']:
             new_text_list.append(ls)
 
         return new_text_list
 
     @staticmethod
-    def create_final_toxic(new_toxic=list(), new_text_list=None, new_toxic_list=None):
+    def create_final_toxic(new_text_list=None, new_toxic_list=None):
         """
         Creating list of the most toxiс comments
 
-        :param new_toxic: empty list
-        :param new_text_list:
-        :param new_toxic_list:
+        :param new_text_list: list with toxic comments
+        :param new_toxic_list: list with toxic category
         :return: list of toxic comments
         """
 
+        print('Cобираем хулиганские сообщения...')
+        new_toxic = list()
         n = 0
         for comments in new_text_list:
             new_toxic.append([new_text_list[n], new_toxic_list[n]])

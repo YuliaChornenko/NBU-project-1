@@ -4,6 +4,7 @@ from nltk.corpus import stopwords
 import users_stopwords
 from langdetect import detect
 import pymorphy2
+from googletrans import Translator
 
 class CleanText:
 
@@ -32,6 +33,27 @@ class CleanText:
         text = ' '.join(word for word in text.split() if len(word) > 3)
 
         return text
+
+    # @staticmethod
+    # def translate_text(df, category, n):
+    #
+    #     cat = df[(df.category == category)]
+    #     translator = Translator()
+    #     dest_df = list()
+    #     cat_list = list()
+    #     for line in cat.text[:round(n/2)]:
+    #         if category == 'Hooligan' or category == 'Offer':
+    #             dest_line = translator.translate(line, dest='uk').text
+    #             dest_df.append(dest_line)
+    #
+    #     for line in cat.text[round(n/2)+1:n+1]:
+    #         dest_df.append(line)
+    #
+    #     for categ in range(n):
+    #             cat_list.append(category)
+    #     print(len(dest_df),len(cat_list))
+    #     return pd.DataFrame({'text': dest_df,
+    #                         'category': cat_list})
 
     @staticmethod
     def prepare_text(df):
