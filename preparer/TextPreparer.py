@@ -1,7 +1,7 @@
+import numpy as np
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
 from tensorflow import keras
-import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
 

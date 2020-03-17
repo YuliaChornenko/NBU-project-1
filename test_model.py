@@ -1,76 +1,18 @@
 import pandas as pd
-from keras.preprocessing import sequence
-from langdetect import detect
-from sklearn.metrics import confusion_matrix
-import preparer.TextPreparer as tp
-import pandas as pd
-from keras.models import Sequential
-from keras.layers import Dense, Embedding, LSTM
-import matplotlib.pyplot as plt
 import numpy as np
 import way
-from model.visualization import graphs as gr
 import cleaner.TextCleaner as tc
+import preparer.TextPreparer as tp
+from keras.models import Sequential
+from keras.preprocessing import sequence
+from keras.layers import Dense, Embedding, LSTM
 from keras.preprocessing.text import Tokenizer
 
-# df = pd.read_pickle('data/dataframe.pkl')
-# n=248
-# print(df.text[n], df.category_code[n], df.category[n])
-# print(df.description[n])
-
-# file = 'data/letters1.txt'
-# tc.CleanText.open_file(file)
-
-# from langdetect import detect
-# import pymorphy2
-#
-# str1 = "як умру то поховайте"
-# lang = str(detect("як умру то поховайте"))
-# morph = pymorphy2.MorphAnalyzer(lang=lang)
-# print(morph.parse(str1))
-#
-#
-# df = pd.read_csv('data/data.csv')
-# ukr = 0
-# rus = 0
-# m=0
-# d=0
-# i = df[(df.category == 'Positive')]
-# k = df[(df.category == 'Negative')]
-# for line in i.text:
-#     if str(detect(line)) == 'uk':
-#         ukr +=1
-#     elif str(detect(line)) == 'ru':
-#         rus +=1
-#
-# print(ukr,rus)
-# from spellchecker import SpellChecker
-#
-# spell = SpellChecker(language=None, case_sensitive=True)
-# spell.word_frequency.load_text_file('ru_full.txt')
-# # find those words that may be misspelled
-# misspelled = spell.unknown(['привет', 'привит'])
-#
-# for word in misspelled:
-#     # Get the one `most likely` answer
-#     print(spell.correction(word))
-#
-#     # Get a list of `likely` options
-#     print(spell.candidates(word))
-
-# from googletrans import Translator
-# translator = Translator()
-# print(translator.translate('안녕하세요', dest='uk').text)
-
-# from translate import Translator
-# translator= Translator(to_lang="uk")
-# translation = translator.translate("Блядь ты меня заебал пиздец блин как можно")
-# print(translation)
-
 file = 'data/letters1.txt'
-a = tc.CleanText.open_file(file)
-b = tc.CleanText.prepare_text(a)
-print(b)
+first = tc.CleanText.open_file(file)
+second = tc.CleanText.prepare_text(first)
+n = len(second)
+
 
 df = pd.read_pickle(way.pickle)
 df = df.sample(frac=1).reset_index(drop=True)
@@ -88,22 +30,13 @@ encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
 X_train, X_test, y_train, y_test = tp.PrepareText.transform_sets(vocab_size, descriptions ,X_train, X_test, y_train, y_test, maxSequenceLength, num_classes)
 
-
-
-
-
-
-X_test1 = b.description
+X_test_nbu = second.description
 
 tokenizer = Tokenizer(num_words=vocab_size)
 tokenizer.fit_on_texts(descriptions)
 
-X_test1 = tokenizer.texts_to_sequences(X_test1)
+X_test1 = tokenizer.texts_to_sequences(X_test_nbu)
 X_test1 = sequence.pad_sequences(X_test1, maxlen=maxSequenceLength)
-
-
-
-
 
 
 # максимальное количество слов для анализа
@@ -141,14 +74,21 @@ print(u'Оценка точности модели: {}'.format(score[1]))
 
 text_labels = encoder.classes_
 
-for i in range(120):
+for i in range(n):
     prediction = model.predict(np.array([X_test1[i]]))
     predicted_label = text_labels[np.argmax(prediction)]
-    print('====================================')
+    dict_ans = {
+        0:'Positive',
+        1:'Negative',
+        2:'Hotline',
+        3:'Hooligan',
+        4:'Offer',
+        5:'SiteAndCoins'
+    }
+    if predicted_label in dict_ans:
+        predicted_label = dict_ans[predicted_label]
+    print('========================================')
     print("Определенная моделью категория: {}".format(predicted_label))
-
-
-y_softmax = model.predict(X_test)
 
 
 

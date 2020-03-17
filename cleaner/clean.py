@@ -1,23 +1,9 @@
 import pandas as pd
-import re
-from langdetect import detect
 import cleaner.TextCleaner as tc
 
 df = pd.read_csv('../data/data.csv')
 
 df.drop(df[(df.category == '1') | (df.category == '0')].index, inplace=True)
-
-# i = 0
-# for line in df.text:
-#     match = re.search('[?]', line)
-#     try:
-#         match = re.search('[?]', line)
-#         if (df.category[i] == 'Positive' or df.category[i] == 'Negative') and match != None :
-#             df.drop(df.index[i])
-#     except:
-#         continue
-#
-#     i += 1
 
 n = 100
 
