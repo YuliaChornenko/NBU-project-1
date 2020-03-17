@@ -148,15 +148,14 @@ class CleanText:
         list_text = []
         with open(file, encoding='utf-8') as f:
             f = f.readlines()
-            print(f)
             for sentence in f:
                 if sentence != '***\n':
                     sentence = re.sub('\n', '', sentence)
                     text.append(sentence)
                 else:
-                    list_text.append([' '.join(text)])
+                    list_text.append(' '.join(text))
                     text = []
 
-        df = pd.DataFrame(list_text)
+        df = pd.DataFrame({'text': list_text})
 
         return df
