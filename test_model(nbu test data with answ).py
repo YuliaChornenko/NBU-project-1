@@ -8,10 +8,14 @@ from keras.preprocessing import sequence
 from keras.layers import Dense, Embedding, LSTM
 from keras.preprocessing.text import Tokenizer
 
-file = 'data/letters1.txt'
-first = tc.CleanText.open_file(file)
+file = 'data/data_nbu.csv'
+first = pd.read_csv(file)
 second = tc.CleanText.prepare_text(first)
-n = len(second)
+second['category_code'] = second.category.apply(lambda x: 5 if x == 'SiteAndCoins' else 2)
+cat_code = second.category_code
+desc = second.description
+
+n = len(cat_code)
 
 
 df = pd.read_pickle(way.pickle)
@@ -30,14 +34,6 @@ encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
 X_train, X_test, y_train, y_test = tp.PrepareText.transform_sets(vocab_size, descriptions ,X_train, X_test, y_train, y_test, maxSequenceLength, num_classes)
 
-X_test_nbu = second.description
-
-tokenizer = Tokenizer(num_words=vocab_size)
-tokenizer.fit_on_texts(X_test_nbu.tolist())
-
-X_test1 = tokenizer.texts_to_sequences(X_test_nbu.tolist())
-X_test1 = sequence.pad_sequences(X_test1, maxlen=maxSequenceLength)
-
 
 # максимальное количество слов для анализа
 max_features = vocab_size
@@ -55,8 +51,8 @@ model.compile(loss='binary_crossentropy',
 print(model.summary())
 
 # обучаем
-batch_size = 16
-epochs = 11
+batch_size = 60
+epochs = 1
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,
@@ -74,6 +70,12 @@ print(u'Оценка точности модели: {}'.format(score[1]))
 
 text_labels = encoder.classes_
 
+tokenizer = Tokenizer(num_words=vocab_size)
+tokenizer.fit_on_texts(desc.tolist())
+
+X_test1 = tokenizer.texts_to_sequences(desc.tolist())
+X_test1 = sequence.pad_sequences(X_test1, maxlen=maxSequenceLength)
+
 for i in range(n):
     prediction = model.predict(np.array([X_test1[i]]))
     predicted_label = text_labels[np.argmax(prediction)]
@@ -87,8 +89,13 @@ for i in range(n):
     }
     if predicted_label in dict_ans:
         predicted_label = dict_ans[predicted_label]
+
+    if cat_code[i] in dict_ans:
+        cat = dict_ans[cat_code[i]]
+
     print('========================================')
     print("Определенная моделью категория: {}".format(predicted_label))
+    print('Правильная категория: {}'.format(cat))
 
 
 
