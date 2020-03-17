@@ -51,8 +51,8 @@ model.compile(loss='binary_crossentropy',
 print(model.summary())
 
 # обучаем
-batch_size = 60
-epochs = 1
+batch_size = 16
+epochs = 11
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,
@@ -76,6 +76,7 @@ tokenizer.fit_on_texts(desc.tolist())
 X_test1 = tokenizer.texts_to_sequences(desc.tolist())
 X_test1 = sequence.pad_sequences(X_test1, maxlen=maxSequenceLength)
 
+match = 0
 for i in range(n):
     prediction = model.predict(np.array([X_test1[i]]))
     predicted_label = text_labels[np.argmax(prediction)]
@@ -93,10 +94,13 @@ for i in range(n):
     if cat_code[i] in dict_ans:
         cat = dict_ans[cat_code[i]]
 
+    if cat == predicted_label:
+        match+=1
+
     print('========================================')
     print("Определенная моделью категория: {}".format(predicted_label))
     print('Правильная категория: {}'.format(cat))
-
+print(match)
 
 
 

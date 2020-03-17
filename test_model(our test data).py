@@ -65,6 +65,7 @@ print(u'Оценка точности модели: {}'.format(score[1]))
 
 text_labels = encoder.classes_
 
+match = 0
 for i in range(n):
     prediction = model.predict(np.array([X_test[i]]))
     predicted_label = text_labels[np.argmax(prediction)]
@@ -82,10 +83,12 @@ for i in range(n):
     if list(y_test[i]).index(1) in dict_ans:
         cat = dict_ans[list(y_test[i]).index(1)]
 
+    if cat == predicted_label:
+        match += 1
+
     print('========================================')
     print("Определенная моделью категория: {}".format(predicted_label))
     print('Правильная категория: {}'.format(cat))
-
-
+print(match)
 
 
