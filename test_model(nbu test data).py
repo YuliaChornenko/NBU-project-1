@@ -72,6 +72,8 @@ print()
 print(u'Оценка теста: {}'.format(score[0]))
 print(u'Оценка точности модели: {}'.format(score[1]))
 
+model.save('model/save/model(nbu test data).h5')
+
 text_labels = encoder.classes_
 
 for i in range(n):

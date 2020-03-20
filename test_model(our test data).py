@@ -63,6 +63,8 @@ print()
 print(u'Оценка теста: {}'.format(score[0]))
 print(u'Оценка точности модели: {}'.format(score[1]))
 
+model.save('model/save/model(our test data).h5')
+
 text_labels = encoder.classes_
 
 match = 0
@@ -89,6 +91,6 @@ for i in range(n):
     print('========================================')
     print("Определенная моделью категория: {}".format(predicted_label))
     print('Правильная категория: {}'.format(cat))
-print(match)
+print('Совпадений: ', match)
 
 
