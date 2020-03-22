@@ -51,7 +51,7 @@ model.compile(loss='binary_crossentropy',
 print(model.summary())
 
 # обучаем
-batch_size = 16
+batch_size = 32
 epochs = 11
 
 print('Тренируем модель...')

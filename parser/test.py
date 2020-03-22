@@ -3,7 +3,7 @@ from parser.pos_and_neg import ReviewsURLScraper
 from parser.toxic_data import ToxicComments
 from parser.name_of_pages import banks_url, pos_url, reviews_page, hotlines_page, file_name, offers_page_1, offers_page_2, offers_page_3
 from parser.offers_data import GetOffers
-
+from parser.tets_1 import new_toxic
 
 reviews_url = ReviewsURLScraper.get_reviews_url(banks_url=banks_url, page=reviews_page)
 hotlines_url = ReviewsURLScraper.get_reviews_url(banks_url=banks_url, page=hotlines_page)
@@ -21,7 +21,7 @@ offer_list_1 = GetOffers.get_offers_1(link=offers_page_1)
 offer_list_2 = GetOffers.get_offers_2(link=offers_page_2)
 offer_list_3 = GetOffers.get_offers_3(link=offers_page_3)
 
-final_list = positive_list[:22]+reviews_list+hotlines_list+toxic_list+offer_list_1+offer_list_2+ offer_list_3
+final_list = positive_list[:22]+reviews_list+new_toxic+hotlines_list+toxic_list+offer_list_1+offer_list_2+ offer_list_3
 
 text_list = list()
 for ls in final_list:
