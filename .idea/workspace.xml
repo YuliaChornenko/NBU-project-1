@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abfed6c3-84cc-44b5-9ecf-ea8537082670" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/data_nbu1.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Model1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cleaner/clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaner/clean.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/category.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/category.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/dataframe.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataframe.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/letters1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/parser/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cleaner/prepare.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaner/prepare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_model(nbu test data with answ).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(nbu test data with answ).py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/way.py" beforeDir="false" afterPath="$PROJECT_DIR$/way.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="NBU-project" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,16 +39,24 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/model" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model/save" />
+      <recent name="$PROJECT_DIR$/parser" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/parser" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -314,42 +324,42 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="231" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1584181877451" />
-    <state width="1398" height="180" key="GridCell.Tab.0.bottom" timestamp="1584880141988">
+    <state width="1398" height="287" key="GridCell.Tab.0.bottom" timestamp="1584918300748">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="180" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584880141988" />
+    <state width="1398" height="287" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584918300748" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
-    <state width="1398" height="180" key="GridCell.Tab.0.center" timestamp="1584880141987">
+    <state width="1398" height="287" key="GridCell.Tab.0.center" timestamp="1584918300747">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="180" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584880141987" />
+    <state width="1398" height="287" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584918300747" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1584229251182" />
-    <state width="1398" height="180" key="GridCell.Tab.0.left" timestamp="1584880141986">
+    <state width="1398" height="287" key="GridCell.Tab.0.left" timestamp="1584918300746">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="180" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584880141986" />
+    <state width="1398" height="287" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584918300746" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1584229251181" />
-    <state width="1398" height="180" key="GridCell.Tab.0.right" timestamp="1584880141988">
+    <state width="1398" height="287" key="GridCell.Tab.0.right" timestamp="1584918300747">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="180" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584880141988" />
+    <state width="1398" height="287" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584918300747" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1584185364176">
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1584884622529">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584185364176" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1584185364176">
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584884622529" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1584884622528">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1584185364176" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1584185364175">
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1584884622528" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1584884622527">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1584185364175" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1584185364176">
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1584884622527" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1584884622528">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1584185364176" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1584884622528" />
     <state x="433" y="173" key="MultipleFileMergeDialog" timestamp="1584714006374">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -372,19 +382,14 @@
     <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1584713653539" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NBU_project$test__3_.coverage" NAME="test (3) Coverage Results" MODIFIED="1584221036098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/preparer" />
-    <SUITE FILE_PATH="coverage/NBU_project$test_model_our_test_data_.coverage" NAME="test_model(our test data) Coverage Results" MODIFIED="1584460415963" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NBU_project$test_model.coverage" NAME="test_model Coverage Results" MODIFIED="1584459767766" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NBU_project$test.coverage" NAME="test Coverage Results" MODIFIED="1584880141979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NBU_project$offers_data.coverage" NAME="offers_data Coverage Results" MODIFIED="1584217308280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
-    <SUITE FILE_PATH="coverage/NBU_project$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1584821950341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
-    <SUITE FILE_PATH="coverage/NBU_project$Model__1_.coverage" NAME="Model (1) Coverage Results" MODIFIED="1584310237426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
-    <SUITE FILE_PATH="coverage/NBU_project$TextCleaner.coverage" NAME="TextCleaner Coverage Results" MODIFIED="1584386712941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
-    <SUITE FILE_PATH="coverage/NBU_project$test__2_.coverage" NAME="test_re Coverage Results" MODIFIED="1584219485373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser/" />
-    <SUITE FILE_PATH="coverage/NBU_project$Model.coverage" NAME="Model Coverage Results" MODIFIED="1584397836552" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
-    <SUITE FILE_PATH="coverage/NBU_project$prepare.coverage" NAME="prepare Coverage Results" MODIFIED="1584824420708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
-    <SUITE FILE_PATH="coverage/NBU_project$tets_1.coverage" NAME="tets_1 Coverage Results" MODIFIED="1584822112369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/parser" />
-    <SUITE FILE_PATH="coverage/NBU_project$clean.coverage" NAME="clean Coverage Results" MODIFIED="1584824230764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
-    <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_with_answ_.coverage" NAME="test_model(nbu test data with answ) Coverage Results" MODIFIED="1584825269588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$test.coverage" NAME="test Coverage Results" MODIFIED="1584918300738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$test__1_.coverage" NAME="test_model Coverage Results" MODIFIED="1584453224987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$test_model_our_test_data_.coverage" NAME="test_model(our test data) Coverage Results" MODIFIED="1584552888148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$clean.coverage" NAME="clean Coverage Results" MODIFIED="1584885023342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
+    <SUITE FILE_PATH="coverage/NBU_project$way.coverage" NAME="way Coverage Results" MODIFIED="1584452263369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$prepare.coverage" NAME="prepare Coverage Results" MODIFIED="1584885242078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
+    <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_.coverage" NAME="test_model(nbu test data) Coverage Results" MODIFIED="1584459723943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_with_answ_.coverage" NAME="test_model(nbu test data with answ) Coverage Results" MODIFIED="1584917858565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$Model.coverage" NAME="Model Coverage Results" MODIFIED="1584399725081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
