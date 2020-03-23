@@ -5,8 +5,11 @@ from keras.preprocessing import sequence
 import keras
 import cleaner.TextCleaner as tc
 
-X_train = 'дякувати сподобатись'
-y_train = 0
+
+df = pd.DataFrame({'text':['дякувати сподобатись'],
+                   'category': [0]})
+X_train = df.text
+y_train = df.category
 
 model = load_model('model/save/model(nbu test data with answ).h5')
 all = pd.read_csv('data/category.csv')

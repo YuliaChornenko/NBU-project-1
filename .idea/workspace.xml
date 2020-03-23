@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abfed6c3-84cc-44b5-9ecf-ea8537082670" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/Model1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/RandomForestRegressor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/continue_train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/model_parameters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaner/clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaner/clean.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cleaner/prepare.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaner/prepare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/save/model(nbu test data with answ).h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/save/model(nbu test data with answ).h5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_model(nbu test data with answ).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(nbu test data with answ).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/way.py" beforeDir="false" afterPath="$PROJECT_DIR$/way.py" afterDir="false" />
@@ -59,7 +60,29 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.RandomForestRegressor">
+    <configuration name="RandomForestRegressor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NBU-project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/model/RandomForestRegressor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="clean" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NBU-project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,42 +171,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tets_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="NBU-project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/parser" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/parser/tets_1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.test_model(nbu test data with answ)" />
-      <item itemvalue="Python.tets_1" />
       <item itemvalue="Python.clean" />
       <item itemvalue="Python.prepare" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.RandomForestRegressor" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.RandomForestRegressor" />
         <item itemvalue="Python.test_model(nbu test data with answ)" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.prepare" />
         <item itemvalue="Python.clean" />
-        <item itemvalue="Python.tets_1" />
       </list>
     </recent_temporary>
   </component>
@@ -213,6 +214,7 @@
       <workItem from="1584144055896" duration="23721000" />
       <workItem from="1584223714876" duration="2226000" />
       <workItem from="1584283059627" duration="47370000" />
+      <workItem from="1584960877007" duration="3952000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit. &#10;Parser added">
       <created>1584134427497</created>
@@ -284,11 +286,28 @@
       <option name="project" value="LOCAL" />
       <updated>1584397759067</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="24th commit.">
+      <created>1584918787238</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1584918787238</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Third commit. &#10;Parser added" />
@@ -301,7 +320,8 @@
     <MESSAGE value="13th commit." />
     <MESSAGE value="14th commit." />
     <MESSAGE value="15th commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="15th commit." />
+    <MESSAGE value="24th commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="24th commit." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584185123999">
@@ -316,80 +336,85 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1584224438800" />
-    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2" timestamp="1584880841653">
+    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2" timestamp="1584918786869">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584880841653" />
+    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1584918786869" />
     <state x="508" y="231" key="FileChooserDialogImpl" timestamp="1584181877451">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="231" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1584181877451" />
-    <state width="1398" height="287" key="GridCell.Tab.0.bottom" timestamp="1584918300748">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1584965978575">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="287" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584918300748" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584965978575" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
-    <state width="1398" height="287" key="GridCell.Tab.0.center" timestamp="1584918300747">
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1584965978574">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="287" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584918300747" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1584965978574" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1584229251182" />
-    <state width="1398" height="287" key="GridCell.Tab.0.left" timestamp="1584918300746">
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1584965978573">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="287" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584918300746" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1584965978573" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1584229251181" />
-    <state width="1398" height="287" key="GridCell.Tab.0.right" timestamp="1584918300747">
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1584965978575">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="287" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584918300747" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1584965978575" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1584884622529">
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1584918934916">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584884622529" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1584884622528">
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1584918934916" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1584918934916">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1584884622528" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1584884622527">
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1584918934916" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1584918934915">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1584884622527" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1584884622528">
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1584918934915" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1584918934916">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1584884622528" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1584918934916" />
     <state x="433" y="173" key="MultipleFileMergeDialog" timestamp="1584714006374">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="433" y="173" key="MultipleFileMergeDialog/0.0.1440.900@0.0.1440.900" timestamp="1584714006373" />
+    <state x="474" y="168" key="RollbackChangesDialog" timestamp="1584963852091">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="474" y="168" key="RollbackChangesDialog/0.0.1440.900@0.0.1440.900" timestamp="1584963852091" />
     <state x="229" y="89" key="SettingsEditor" timestamp="1584298365383">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1584298365383" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1584397810733">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1584918791735">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584397810733" />
-    <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1584283061691">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1584918791735" />
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1584960877762">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="399" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1584283061691" />
+    <state x="399" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1584960877762" />
     <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584713653539">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1584713653539" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NBU_project$test.coverage" NAME="test Coverage Results" MODIFIED="1584918300738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$test.coverage" NAME="test Coverage Results" MODIFIED="1584962285086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NBU_project$test__1_.coverage" NAME="test_model Coverage Results" MODIFIED="1584453224987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$RandomForestRegressor.coverage" NAME="RandomForestRegressor Coverage Results" MODIFIED="1584965978565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/NBU_project$test_model_our_test_data_.coverage" NAME="test_model(our test data) Coverage Results" MODIFIED="1584552888148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NBU_project$clean.coverage" NAME="clean Coverage Results" MODIFIED="1584885023342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
     <SUITE FILE_PATH="coverage/NBU_project$way.coverage" NAME="way Coverage Results" MODIFIED="1584452263369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NBU_project$prepare.coverage" NAME="prepare Coverage Results" MODIFIED="1584885242078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
     <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_.coverage" NAME="test_model(nbu test data) Coverage Results" MODIFIED="1584459723943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_with_answ_.coverage" NAME="test_model(nbu test data with answ) Coverage Results" MODIFIED="1584917858565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_with_answ_.coverage" NAME="test_model(nbu test data with answ) Coverage Results" MODIFIED="1584963939493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NBU_project$Model.coverage" NAME="Model Coverage Results" MODIFIED="1584399725081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

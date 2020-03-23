@@ -15,19 +15,7 @@ second['category_code'] = second.category.apply(lambda x: 5 if x == 'SiteAndCoin
 cat_code = second.category_code
 desc = second.description
 
-
-# all = pd.read_csv('data/category.csv')
-# descriptions = tc.CleanText.prepare_text(all).description
-# tokenizer, textSequences = tp.PrepareText.tokenizer(descriptions)
-
-# train = pd.read_pickle('data/df_train.pkl')
-# X_train = train.description
-# y_train = train.category_code
-# test = pd.read_pickle('data/df_test.pkl')
-# X_test = test.description
-# y_test = test.category_code
-
-n = len(all.category)
+n = len(cat_code)
 
 
 df = pd.read_pickle(way.pickle)
@@ -36,12 +24,10 @@ categories = df.category_code
 descriptions = df.description
 
 tokenizer, textSequences = tp.PrepareText.tokenizer(descriptions)
-print(textSequences)
 X_train, y_train, X_test, y_test = tp.PrepareText.load_data_from_arrays(descriptions, categories, train_test_split=0.8)
 
 total_unique_words, maxSequenceLength = tp.PrepareText.max_count(descriptions, tokenizer)
 vocab_size = round(total_unique_words/10)
-print(maxSequenceLength)
 
 encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
