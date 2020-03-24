@@ -44,15 +44,15 @@ model.add(Embedding(max_features, maxSequenceLength))
 model.add(LSTM(32, dropout=0.2, recurrent_dropout=0.2))
 model.add(Dense(num_classes, activation='sigmoid'))
 
-model.compile(loss='binary_crossentropy',
+model.compile(loss='categorical_crossentropy',
               optimizer='adam',
               metrics=['accuracy'])
 
 print(model.summary())
 
 # обучаем
-batch_size = 60
-epochs = 1
+batch_size = 32
+epochs = 7
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,
