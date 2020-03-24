@@ -133,3 +133,18 @@ class PrepareText:
         print('y_test shape:', y_test.shape)
 
         return X_train, X_test, y_train, y_test
+
+    @staticmethod
+    def parameters(df, train_test_split=0.8):
+        categories = df.category_code
+        descriptions = df.description
+
+        tokenizer, textSequences = PrepareText.tokenizer(descriptions)
+        X_train, y_train, X_test, y_test = PrepareText.load_data_from_arrays(descriptions, categories, train_test_split)
+
+        total_unique_words, maxSequenceLength = PrepareText.max_count(descriptions, tokenizer)
+        vocab_size = round(total_unique_words / 10)
+
+        encoder, num_classes = PrepareText.num_classes(y_train, y_test)
+
+        return maxSequenceLength, vocab_size, encoder, num_classes

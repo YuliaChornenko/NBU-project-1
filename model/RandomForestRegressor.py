@@ -1,4 +1,5 @@
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report, confusion_matrix
 import pandas as pd
 import cleaner.TextCleaner as tc
 import preparer.TextPreparer as tp
@@ -37,54 +38,60 @@ encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
 X_train, X_test, y_train, y_test = tp.PrepareText.transform_sets(vocab_size, descriptions ,X_train, X_test, y_train, y_test, maxSequenceLength, num_classes)
 
+classifier = RandomForestClassifier(criterion='gini', max_depth=21, n_estimators=1)
+#criterion='entropy', max_depth=43, n_estimators=6
+#criterion='gini', max_depth=37, n_estimators=1
+
+# parametrs = {'criterion':['entropy', 'gini'],
+#              'max_depth': range(1,50),
+#              'n_estimators': range(1,10)}
+# grid = GridSearchCV(classifier, parametrs, cv=5)
+# grid.fit(X_train, y_train)
+# print(grid)
+# print(grid.best_params_)
+# print(grid.best_score_)
+
+classifier.fit(X_train, y_train)
+y_pred = classifier.predict(X_test)
+
+report = classification_report(y_test, y_pred)
+print(report)
+
+text_labels = encoder.classes_
+
+tokenizer = Tokenizer(num_words=vocab_size)
+tokenizer.fit_on_texts(desc.tolist())
+
+X_test1 = tokenizer.texts_to_sequences(desc.tolist())
+X_test1 = sequence.pad_sequences(X_test1, maxlen=maxSequenceLength)
+
+match = 0
+for i in range(n):
+    prediction = classifier.predict(np.array([X_test1[i]]))
+    predicted_label = text_labels[np.argmax(prediction)]
+    dict_ans = {
+        0:'Positive',
+        1:'Negative',
+        2:'Hotline',
+        3:'Hooligan',
+        4:'Offer',
+        5:'SiteAndCoins'
+    }
+    if predicted_label in dict_ans:
+        predicted_label = dict_ans[predicted_label]
+
+    if cat_code[i] in dict_ans:
+        cat = dict_ans[cat_code[i]]
+    # if list(y_test[i]).index(1) in dict_ans:
+    #     cat = dict_ans[list(y_test[i]).index(1)]
+
+    if cat == predicted_label:
+        match+=1
+
+    print('========================================')
+    print("Определенная моделью категория: {}".format(predicted_label))
+    print('Правильная категория: {}'.format(cat))
+print('Совпадений: ', match)
 
 
-regressor = RandomForestRegressor()
-parametrs = {'max_depth': range(1,30)}
-grid = GridSearchCV(regressor, parametrs, cv=5)
-grid.fit(X_train, y_train)
-print(grid)
-print(grid.best_params_)
-print(grid.best_score_)
-print(grid.best_estimator_.alpha)
 
-
-# regressor.fit(X_train, y_train)
-# y_pred = regressor.predict(X_test)
-#
-# text_labels = encoder.classes_
-#
-# tokenizer = Tokenizer(num_words=vocab_size)
-# tokenizer.fit_on_texts(desc.tolist())
-#
-# X_test1 = tokenizer.texts_to_sequences(desc.tolist())
-# X_test1 = sequence.pad_sequences(X_test1, maxlen=maxSequenceLength)
-#
-# match = 0
-# for i in range(n):
-#     prediction = regressor.predict(np.array([X_test1[i]]))
-#     predicted_label = text_labels[np.argmax(prediction)]
-#     dict_ans = {
-#         0:'Positive',
-#         1:'Negative',
-#         2:'Hotline',
-#         3:'Hooligan',
-#         4:'Offer',
-#         5:'SiteAndCoins'
-#     }
-#     if predicted_label in dict_ans:
-#         predicted_label = dict_ans[predicted_label]
-#
-#     if cat_code[i] in dict_ans:
-#         cat = dict_ans[cat_code[i]]
-#
-#     if cat == predicted_label:
-#         match+=1
-#
-#     print('========================================')
-#     print("Определенная моделью категория: {}".format(predicted_label))
-#     print('Правильная категория: {}'.format(cat))
-# print('Совпадений: ', match)
-#
-#
-#

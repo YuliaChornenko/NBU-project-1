@@ -8,7 +8,7 @@ import numpy as np
 import way
 from model.visualization import graphs as gr
 
-df = pd.read_pickle(way.pickle)
+df = pd.read_pickle(way.pickle1)
 df = df.sample(frac=1).reset_index(drop=True)
 
 categories = df.category_code
@@ -23,8 +23,7 @@ vocab_size = round(total_unique_words/10)
 encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
 X_train, X_test, y_train, y_test = tp.PrepareText.transform_sets(vocab_size, descriptions ,X_train, X_test, y_train, y_test, maxSequenceLength, num_classes)
-
-
+print(X_train[0], y_train[0], X_train, y_train)
 # максимальное количество слов для анализа
 max_features = vocab_size
 
@@ -91,3 +90,4 @@ text_labels = encoder.classes_
 cnf_matrix = confusion_matrix(y_test_1d, y_pred_1d)
 plt.figure(figsize=(48,40))
 gr.Graphs.plot_confusion_matrix(cnf_matrix, classes=text_labels, title="Confusion matrix")
+model.save('')
