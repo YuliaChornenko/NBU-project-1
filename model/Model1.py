@@ -25,7 +25,6 @@ encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
 
 X_train, X_test, y_train, y_test = tp.PrepareText.transform_sets(vocab_size, descriptions ,X_train, X_test, y_train, y_test, maxSequenceLength, num_classes)
 
-
 # максимальное количество слов для анализа
 max_features = vocab_size
 

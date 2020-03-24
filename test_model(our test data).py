@@ -5,13 +5,11 @@ import preparer.TextPreparer as tp
 from keras.models import Sequential
 from keras.layers import Dense, Embedding, LSTM
 
-
 df = pd.read_pickle(way.pickle)
 df = df.sample(frac=1).reset_index(drop=True)
 categories = df.category_code
 descriptions = df.description
 text = df.text
-
 
 tokenizer, textSequences = tp.PrepareText.tokenizer(descriptions)
 X_train, y_train, X_test, y_test = tp.PrepareText.load_data_from_arrays(descriptions, categories, train_test_split=0.8)
