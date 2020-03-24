@@ -6,8 +6,8 @@ import keras
 import cleaner.TextCleaner as tc
 
 
-df = pd.DataFrame({'text':['дякувати сподобатись'],
-                   'category': [0]})
+df = pd.DataFrame({'text':['я обурюватись'],
+                   'category': [1]})
 X_train = df.text
 y_train = df.category
 
