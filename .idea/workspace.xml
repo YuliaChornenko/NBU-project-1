@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abfed6c3-84cc-44b5-9ecf-ea8537082670" name="Default Changelist" comment="27th commit.">
-      <change afterPath="$PROJECT_DIR$/interface/csv_example.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/interface.py" afterDir="false" />
+    <list default="true" id="abfed6c3-84cc-44b5-9ecf-ea8537082670" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/category_with_received_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/category_with_received_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/continue_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/continue_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/save/model(nbu test data with answ).h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/save/model(nbu test data with answ).h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/save/model(our test data).h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/save/model(our test data).h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_model(nbu test data with answ).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(nbu test data with answ).py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_model(our test data).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(our test data).py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/csv_example.png" beforeDir="false" afterPath="$PROJECT_DIR$/interface/csv_example.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/way.py" beforeDir="false" afterPath="$PROJECT_DIR$/way.py" afterDir="false" />
     </list>
     <list id="f7ae4f82-51f9-4f00-8d1e-8a807e077ed9" name="Revert &quot;23th commit.&quot;" comment="Revert &quot;23th commit.&quot;&#10;&#10;This reverts commit 13978d7d" />
@@ -44,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/interface" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,15 +48,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
-      <recent name="$PROJECT_DIR$/model" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/model/save" />
       <recent name="$PROJECT_DIR$/parser" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/interface" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/model" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager" selected="Python.interface">
@@ -220,7 +215,7 @@
       <workItem from="1584223714876" duration="2226000" />
       <workItem from="1584283059627" duration="47370000" />
       <workItem from="1584960877007" duration="30033000" />
-      <workItem from="1585080362141" duration="13304000" />
+      <workItem from="1585080362141" duration="16958000" />
     </task>
     <task id="LOCAL-00001" summary="Third commit. &#10;Parser added">
       <created>1584134427497</created>
@@ -306,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584966059568</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="29th commit.">
+      <created>1585136349530</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585136349530</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +376,8 @@
     <MESSAGE value="27-th commit." />
     <MESSAGE value="25th commit." />
     <MESSAGE value="27th commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="27th commit." />
+    <MESSAGE value="29th commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="29th commit." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584185123999">
@@ -389,10 +392,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1584224438800" />
-    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2" timestamp="1585080181717">
+    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2" timestamp="1585136348362">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585080181717" />
+    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585136348362" />
     <state x="100" y="123" width="1240" height="608" key="DiffContextDialog" timestamp="1584992340159">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
@@ -402,28 +405,28 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="231" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1584181877451" />
-    <state width="1398" height="274" key="GridCell.Tab.0.bottom" timestamp="1585135883604">
+    <state width="1398" height="274" key="GridCell.Tab.0.bottom" timestamp="1585140282329">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="274" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585135883604" />
+    <state width="1398" height="274" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585140282329" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1584992212692" />
-    <state width="1398" height="274" key="GridCell.Tab.0.center" timestamp="1585135883603">
+    <state width="1398" height="274" key="GridCell.Tab.0.center" timestamp="1585140282328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="274" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585135883603" />
+    <state width="1398" height="274" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585140282328" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1584229251182" />
     <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1584992212691" />
-    <state width="1398" height="274" key="GridCell.Tab.0.left" timestamp="1585135883602">
+    <state width="1398" height="274" key="GridCell.Tab.0.left" timestamp="1585140282327">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="274" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585135883602" />
+    <state width="1398" height="274" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585140282327" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1584229251181" />
     <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1584992212690" />
-    <state width="1398" height="274" key="GridCell.Tab.0.right" timestamp="1585135883603">
+    <state width="1398" height="274" key="GridCell.Tab.0.right" timestamp="1585140282328">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="274" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585135883603" />
+    <state width="1398" height="274" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585140282328" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1584992212691" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1584918934916">
@@ -459,10 +462,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585134420275" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585079863421">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585136360261">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585079863421" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585136360261" />
     <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1584960877762">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -488,7 +491,7 @@
     <SUITE FILE_PATH="coverage/NBU_project$LogisticRegression.coverage" NAME="LogisticRegression Coverage Results" MODIFIED="1585045042007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/NBU_project$clean.coverage" NAME="clean Coverage Results" MODIFIED="1585078018065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
     <SUITE FILE_PATH="coverage/NBU_project$model_parameters.coverage" NAME="model_parameters Coverage Results" MODIFIED="1584967623140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
-    <SUITE FILE_PATH="coverage/NBU_project$interface.coverage" NAME="interface Coverage Results" MODIFIED="1585135883596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/NBU_project$interface.coverage" NAME="interface Coverage Results" MODIFIED="1585140282313" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
     <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_with_answ_.coverage" NAME="test_model(nbu test data with answ) Coverage Results" MODIFIED="1585084356920" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

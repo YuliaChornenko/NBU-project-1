@@ -5,20 +5,24 @@ from tkinter import filedialog as fd
 from PIL import Image, ImageTk
 import pandas as pd
 import numpy as np
+import keras
 from keras.models import load_model
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing import sequence
 import cleaner.TextCleaner as tc
 import preparer.TextPreparer as tp
+import way
 
 
 class ModelInterface:
+    """
+    Calls up functions depending on the user choosing a button on the initial window
+    """
 
     @staticmethod
     def create_window():
         """
-
-        :return:
+        Creates a message box
         """
 
         window = tk.Toplevel(root)
@@ -33,8 +37,7 @@ class ModelInterface:
 
         def yes_clicked():
             """
-
-            :return:
+            If the category is defined correctly
             """
 
             messagebox.showinfo(message='Дякуємо за звернення!')
@@ -42,28 +45,26 @@ class ModelInterface:
 
         def no_clicked():
             """
-
-            :return:
+            If the category is not defined correctly
             """
 
             choose = tk.Toplevel(window)
             program_message = tk.Label(choose,
-                                       text='Вкажіть, до якої категорії належить звернення,\n та ми продовжимо навчання моделі')
+                                       text='Вкажіть, до якої категорії належить звернення,'
+                                            '\n та ми продовжимо навчання моделі')
             var = tk.IntVar()
             var.set(0)
             category0 = Radiobutton(choose, text='Позитивний відгук', variable=var, value=0)
             category1 = Radiobutton(choose, text='Негативний відгук', variable=var, value=1)
-            category2 = Radiobutton(choose, text='Звернення на внутришній департамент', variable=var, value=2)
+            category2 = Radiobutton(choose, text='Звернення на внутрішній департамент', variable=var, value=2)
             category3 = Radiobutton(choose, text='Хуліганське звернення', variable=var, value=3)
             category4 = Radiobutton(choose, text='Пропозиція щодо вдосконалення роботи', variable=var, value=4)
             category5 = Radiobutton(choose, text='Звернення стосовно сайту купівлі монет', variable=var, value=5)
             text = user_message.get('1.0', 'end-1c')
 
             def learn():
-
                 """
-
-                :return:
+                Continues model training on the entered message
                 """
 
                 messagebox.showinfo(message='Дякуємо за звернення!')
@@ -133,9 +134,7 @@ class ModelInterface:
 
         def define_category(event):
             """
-
-            :param event:
-            :return:
+            Defining the category of the entered message
             """
 
             text = user_message.get('1.0', 'end-1c')
@@ -180,13 +179,24 @@ class ModelInterface:
                 }
                 if predicted_label in dict_ans:
                     predicted_label = dict_ans[predicted_label]
-
+                    if predicted_label == 'Positive':
+                        predicted_label = 'Позитивний відгук'
+                    elif predicted_label == 'Negative':
+                        predicted_label = 'Негативний відгук'
+                    elif predicted_label == 'Hotline':
+                        predicted_label = 'Звернення на внутрішній департамент'
+                    elif predicted_label == 'Hooligan':
+                        predicted_label = 'Хуліганське звернення'
+                    elif predicted_label == 'Offer':
+                        predicted_label = 'Пропозиція щодо вдосконалення роботи'
+                    elif predicted_label == 'SiteAndCoins':
+                        predicted_label = 'Звернення стосовно сайту купівлі монет'
                 input_field['text'] = predicted_label
 
-            yes = tk.Button(window, text='Правильно', command=yes_clicked)
-            no = tk.Button(window, text='Неправильно', command=no_clicked)
-            yes.pack(side='left', padx=35, pady=35)
-            no.pack(side='right', padx=35, pady=35)
+                yes = tk.Button(window, text='Правильно', command=yes_clicked)
+                no = tk.Button(window, text='Неправильно', command=no_clicked)
+                yes.pack(side='left', padx=35, pady=35)
+                no.pack(side='right', padx=35, pady=35)
 
         define.bind('<Button-1>', define_category)
 
@@ -202,11 +212,11 @@ class ModelInterface:
     @staticmethod
     def create_file_window():
         """
-
-        :return:
+        Creates a file download window for training
         """
 
         window = tk.Toplevel(root)
+        window.title('Продовження навчання моделі')
         program_message = tk.Label(window, text='Оберіть файл', font=("Arial Bold", 14))
         program_message1 = tk.Label(window, text='Файл повинен бути формату .csv '
                                                  'та містити дані, збережені наступним чином:', font=("Arial Bold", 12))
@@ -217,8 +227,7 @@ class ModelInterface:
 
         def insertText():
             """
-
-            :return:
+            File selection
             """
 
             file_name = fd.askopenfilename()
@@ -230,21 +239,34 @@ class ModelInterface:
                 print_file_name = tk.Label(window, text='Обраний файл: ' + print_file_name)
 
                 def file_learn():
+                    """
+                    Continuation of model training on data from the selected file
+                    """
+
                     messagebox.showinfo(message='Дякуємо за звернення!\n'
                                                 'Ми продовжимо навчання моделі на даних з файлу')
                     window.destroy()
 
                     all = pd.read_csv(file_name)
-                    cat = tc.CleanText.clean_category(all)
-                    descriptions = tc.CleanText.prepare_text(all).description
-                    all = tc.CleanText.prepare_df(all)
-                    maxSequenceLength, vocab_size, encoder, num_classes = tp.PrepareText.parameters(cat)
+                    all_inf = pd.read_csv(way.pickle2)
+                    all_text = tc.CleanText.prepare_text(all_inf)
+                    all_cat = tc.CleanText.clean_category(all_text)
+                    all_inf = pd.concat([all, all_inf]).to_csv(way.pickle2, index=False)
+                    model = load_model('../model/save/model(our test data).h5')
+                    description = tc.CleanText.prepare_text(all).description
+                    category_code = tc.CleanText.clean_category(all).category_code
+                    maxSequenceLength, vocab_size, encoder, num_classes = tp.PrepareText.parameters(all_cat)
 
                     tokenizer = Tokenizer(num_words=vocab_size)
-                    tokenizer.fit_on_texts(descriptions)
-                    X_train = descriptions
+                    tokenizer.fit_on_texts(description)
+                    X_train = description
                     X_train = tokenizer.texts_to_sequences(X_train)
                     X_train = sequence.pad_sequences(X_train, maxlen=maxSequenceLength)
+
+                    y_train = category_code
+                    y_train = keras.utils.to_categorical(y_train, num_classes)
+
+                    model.fit(X_train, y_train)
 
 
                 learn_button = tk.Button(window, text='Продовжити навчання моделі', command=file_learn)
@@ -258,12 +280,13 @@ class ModelInterface:
         open_button.grid()
         window.mainloop()
 
+
 root = tk.Tk()
-w = root.winfo_screenwidth() # ширина экрана
-h = root.winfo_screenheight() # высота экрана
-w = w//2  # середина экрана
+w = root.winfo_screenwidth()
+h = root.winfo_screenheight()
+w = w//2
 h = h//2
-w = w - 200  # смещение от середины
+w = w - 200
 h = h - 200
 root.geometry('400x200+{}+{}'.format(w, h))
 root.title('Класифікатор звернень громадян')
