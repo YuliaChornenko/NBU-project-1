@@ -51,8 +51,8 @@ model.compile(loss='categorical_crossentropy',
 print(model.summary())
 
 # обучаем
-batch_size = 32
-epochs = 7
+batch_size = 64
+epochs = 8
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,

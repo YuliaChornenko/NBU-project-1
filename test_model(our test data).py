@@ -44,8 +44,8 @@ model.compile(loss='binary_crossentropy',
 print(model.summary())
 
 # обучаем
-batch_size = 16
-epochs = 11
+batch_size = 64
+epochs = 8
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,

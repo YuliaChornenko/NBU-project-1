@@ -11,7 +11,7 @@ text = str(input('TEXT: '))
 text_list = list()
 for x in range(6):
     text_list.append(text)
-model = load_model('../model/save/model(nbu test data with answ1).h5')
+model = load_model('../model/save/model(our test data).h5')
 df = pd.DataFrame({'text': text_list})
 X_train = df.text
 cat = '../data/category_with_received_data.csv'
