@@ -7,15 +7,18 @@ import pymorphy2
 
 
 class CleanText:
+    """
+    Clean text and create new columns with new data
+    """
 
     @staticmethod
     def clean_text(text):
-        '''
+        """
         Clean text
 
         :param text: text to clean
         :return: clean text
-        '''
+        """
 
         text = str(text).lower()
         text = ' '.join([word for word in text.split() if word not in stopwords.words('russian')])
@@ -34,35 +37,14 @@ class CleanText:
 
         return text
 
-    # @staticmethod
-    # def translate_text(df, category, n):
-    #
-    #     cat = df[(df.category == category)]
-    #     translator = Translator()
-    #     dest_df = list()
-    #     cat_list = list()
-    #     for line in cat.text[:round(n/2)]:
-    #         if category == 'Hooligan' or category == 'Offer':
-    #             dest_line = translator.translate(line, dest='uk').text
-    #             dest_df.append(dest_line)
-    #
-    #     for line in cat.text[round(n/2)+1:n+1]:
-    #         dest_df.append(line)
-    #
-    #     for categ in range(n):
-    #             cat_list.append(category)
-    #     print(len(dest_df),len(cat_list))
-    #     return pd.DataFrame({'text': dest_df,
-    #                         'category': cat_list})
-
     @staticmethod
     def prepare_text(df):
-        '''
+        """
         Create new column in DataFrame with clean text(using function 'clean_text')
 
         :param df: DataFrame which consist of the text to be cleaned
         :return: DataFrame with new column of cleaned text
-        '''
+        """
 
         df['description'] = df.apply(lambda x: CleanText.clean_text(x['text']), axis=1)
 
@@ -70,12 +52,12 @@ class CleanText:
 
     @staticmethod
     def clean_category(df):
-        '''
+        """
         Replace categories with numbers
 
         :param df: DataFrame with categories
         :return: DataFrame with new column of replaced categories
-        '''
+        """
 
         categories = {}
         for key, value in enumerate(df['category'].unique()):
@@ -90,14 +72,14 @@ class CleanText:
 
     @staticmethod
     def detect_lang(df, category, n):
-        '''
+        """
         Create DataFrame(where half Ukrainian anf half Russian text) for a given category
 
         :param df: DataFrame with text
         :param category: Text definition category
         :param n: Size of DataFrame
         :return: DataFrame where half of the data is Ukrainian and half Russian
-        '''
+        """
 
         ukr_list = list()
         rus_list = list()
@@ -119,13 +101,13 @@ class CleanText:
 
     @staticmethod
     def prepare_df(df, pickle):
-        '''
+        """
         Create new DataFrame with cleaned text and replaced categories (using functions 'clean_category' and 'prepare_text')
 
         :param df: Default DataFrame
         :param pickle: Way to dataframe.pkl
         :return: New DataFrame with clean text and replaced categories
-        '''
+        """
 
         if 'category_code' not in df.columns:
             df = CleanText.clean_category(df)
@@ -137,12 +119,12 @@ class CleanText:
 
     @staticmethod
     def open_file(file):
-        '''
+        """
         Read file and create DataFrame
 
         :param file: File which will be read
         :return: DataFrame with file entries
-        '''
+        """
 
         text = []
         list_text = []

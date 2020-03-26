@@ -6,7 +6,8 @@ from keras.layers import Dense, Embedding, LSTM
 import matplotlib.pyplot as plt
 import numpy as np
 import way
-from model.visualization import graphs as gr
+from visualization import graphs as gr
+
 
 df = pd.read_pickle(way.pickle1)
 df = df.sample(frac=1).reset_index(drop=True)
@@ -40,8 +41,8 @@ model.compile(loss='binary_crossentropy',
 print(model.summary())
 
 # обучаем
-batch_size = 16
-epochs = 11
+batch_size = 64
+epochs = 8
 
 print('Тренируем модель...')
 history = model.fit(X_train, y_train,

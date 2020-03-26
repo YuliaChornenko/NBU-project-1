@@ -4,6 +4,10 @@ import way
 import preparer.TextPreparer as tp
 from keras.models import Sequential
 from keras.layers import Dense, Embedding, LSTM
+import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
+import itertools
+
 
 df = pd.read_pickle(way.pickle)
 df = df.sample(frac=1).reset_index(drop=True)
@@ -24,7 +28,6 @@ total_unique_words, maxSequenceLength = tp.PrepareText.max_count(descriptions, t
 vocab_size = round(total_unique_words/10)
 
 encoder, num_classes = tp.PrepareText.num_classes(y_train, y_test)
-
 
 X_train, X_test, y_train, y_test = tp.PrepareText.transform_sets(vocab_size, descriptions ,X_train, X_test, y_train, y_test, maxSequenceLength, num_classes)
 
@@ -91,4 +94,65 @@ for i in range(n):
     print('Правильная категория: {}'.format(cat))
 print('Совпадений: ', match)
 
+plt.style.use("ggplot")
+plt.figure()
+N = epochs
+plt.plot(np.arange(0, N), history.history["loss"], label="train_loss")
+plt.plot(np.arange(0, N), history.history["val_loss"], label="val_loss")
+plt.plot(np.arange(0, N), history.history["accuracy"], label="train_acc")
+plt.plot(np.arange(0, N), history.history["val_accuracy"], label="val_acc")
+plt.title("Эффективность обучения")
+plt.xlabel("Повторения #")
+plt.ylabel("Ошибки")
+plt.legend(loc="lower left")
+plt.show()
 
+def plot_confusion_matrix(cm, classes,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues, normalize=True):
+    """
+    This function prints and plots the confusion matrix.
+    Normalization can be applied by setting `normalize=True`.
+    """
+
+    cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title, fontsize=30)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45, fontsize=22)
+    plt.yticks(tick_marks, classes, fontsize=22)
+
+    fmt = '.2f'
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], fmt),
+                 horizontalalignment='center',
+                 color='white' if cm[i, j] > thresh else 'black')
+
+    plt.ylabel('Правильная категория', fontsize=25)
+    plt.xlabel('Определенная моделью категория', fontsize=25)
+
+
+y_softmax = model.predict(X_test)
+
+y_test_1d = []
+y_pred_1d = []
+
+for i in range(len(y_test)):
+    probs = y_test[i]
+    index_arr = np.nonzero(probs)
+    one_hot_index = index_arr[0].item(0)
+    y_test_1d.append(one_hot_index)
+
+for i in range(0, len(y_softmax)):
+    probs = y_softmax[i]
+    predicted_index = np.argmax(probs)
+    y_pred_1d.append(predicted_index)
+
+text_labels = encoder.classes_
+cnf_matrix = confusion_matrix(y_test_1d, y_pred_1d)
+plt.figure(figsize=(48, 40))
+plot_confusion_matrix(cnf_matrix, classes=text_labels, title='Confusion matrix')
+plt.show()

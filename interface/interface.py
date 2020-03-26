@@ -5,7 +5,6 @@ from tkinter import filedialog as fd
 from PIL import Image, ImageTk
 import pandas as pd
 import numpy as np
-import keras
 from keras.models import load_model
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing import sequence
@@ -208,7 +207,6 @@ class ModelInterface:
         input_field.pack()
         window.mainloop()
 
-
     @staticmethod
     def create_file_window():
         """
@@ -251,10 +249,10 @@ class ModelInterface:
                     all_inf = pd.read_csv(way.pickle2)
                     all_text = tc.CleanText.prepare_text(all_inf)
                     all_cat = tc.CleanText.clean_category(all_text)
-                    all_inf = pd.concat([all, all_inf]).to_csv(way.pickle2, index=False)
                     model = load_model('../model/save/model(our test data).h5')
                     description = tc.CleanText.prepare_text(all).description
-                    category_code = tc.CleanText.clean_category(all).category_code
+
+                    all['category_code'] = all.category.apply(tp.PrepareText.change_cat)
                     maxSequenceLength, vocab_size, encoder, num_classes = tp.PrepareText.parameters(all_cat)
 
                     tokenizer = Tokenizer(num_words=vocab_size)
@@ -263,10 +261,20 @@ class ModelInterface:
                     X_train = tokenizer.texts_to_sequences(X_train)
                     X_train = sequence.pad_sequences(X_train, maxlen=maxSequenceLength)
 
-                    y_train = category_code
-                    y_train = keras.utils.to_categorical(y_train, num_classes)
+                    y_train = all.category_code
+                    dict_changes = {
+                        0: np.array([1., 0., 0., 0., 0., 0.]),
+                        1: np.array([0., 1., 0., 0., 0., 0.]),
+                        2: np.array([0., 0., 1., 0., 0., 0.]),
+                        3: np.array([0., 0., 0., 1., 0., 0.]),
+                        4: np.array([0., 0., 0., 0., 1., 0.]),
+                        5: np.array([0., 0., 0., 0., 0., 1.]),
+                    }
+                    Y_train = []
+                    for x in y_train:
+                        Y_train.append(dict_changes[x])
 
-                    model.fit(X_train, y_train)
+                    model.fit(X_train, np.array(Y_train), epochs=1)
 
 
                 learn_button = tk.Button(window, text='Продовжити навчання моделі', command=file_learn)
