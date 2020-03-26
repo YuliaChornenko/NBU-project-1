@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/cleaner/clean.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaner/clean.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cleaner/prepare.py" beforeDir="false" afterPath="$PROJECT_DIR$/cleaner/prepare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/category_with_received_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/category_with_received_data.csv" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/interface/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/LogisticRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/LogisticRegression.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/Model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/Model.py" afterDir="false" />
@@ -26,6 +27,11 @@
       <change beforePath="$PROJECT_DIR$/test_model(nbu test data with answ).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(nbu test data with answ).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_model(nbu test data).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(nbu test data).py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_model(our test data).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(our test data).py" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/model/save/model(nbu test data with answ).h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/save/model(nbu test data with answ).h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/save/model(our test data).h5" beforeDir="false" afterPath="$PROJECT_DIR$/model/save/model(our test data).h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_model(nbu test data with answ).py" beforeDir="false" afterPath="$PROJECT_DIR$/test_model(nbu test data with answ).py" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <list id="f7ae4f82-51f9-4f00-8d1e-8a807e077ed9" name="Revert &quot;23th commit.&quot;" comment="Revert &quot;23th commit.&quot;&#10;&#10;This reverts commit 13978d7d" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,8 +86,13 @@
       <recent name="$PROJECT_DIR$/parser" />
     </key>
   </component>
+<<<<<<< Updated upstream
   <component name="RunManager" selected="Python.prepare">
     <configuration name="SVM" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+  <component name="RunManager" selected="Python.test_model(nbu test data with answ)">
+    <configuration name="interface" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> Stashed changes
       <module name="NBU-project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -200,11 +211,19 @@
     </list>
     <recent_temporary>
       <list>
+<<<<<<< Updated upstream
         <item itemvalue="Python.prepare" />
         <item itemvalue="Python.clean" />
         <item itemvalue="Python.test_model(nbu test data with answ)" />
         <item itemvalue="Python.test_model(our test data)" />
         <item itemvalue="Python.SVM" />
+=======
+        <item itemvalue="Python.test_model(nbu test data with answ)" />
+        <item itemvalue="Python.interface" />
+        <item itemvalue="Python.test_model(our test data)" />
+        <item itemvalue="Python.way" />
+        <item itemvalue="Python.test" />
+>>>>>>> Stashed changes
       </list>
     </recent_temporary>
   </component>
@@ -235,8 +254,12 @@
       <workItem from="1584223714876" duration="2226000" />
       <workItem from="1584283059627" duration="47370000" />
       <workItem from="1584960877007" duration="30033000" />
+<<<<<<< Updated upstream
       <workItem from="1585080362141" duration="16958000" />
       <workItem from="1585154619919" duration="21227000" />
+=======
+      <workItem from="1585080362141" duration="25007000" />
+>>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Third commit. &#10;Parser added">
       <created>1584134427497</created>
@@ -329,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585136349530</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="30th commit.">
+      <created>1585140433131</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585140433131</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +428,8 @@
     <MESSAGE value="25th commit." />
     <MESSAGE value="27th commit." />
     <MESSAGE value="29th commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="29th commit." />
+    <MESSAGE value="30th commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="30th commit." />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584185123999">
@@ -413,10 +444,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1584224438800" />
-    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2" timestamp="1585136348362">
+    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2" timestamp="1585140432858">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585136348362" />
+    <state x="310" y="23" width="812" height="801" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1585140432858" />
     <state x="100" y="123" width="1240" height="608" key="DiffContextDialog" timestamp="1584992340159">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
@@ -426,6 +457,7 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="508" y="231" key="FileChooserDialogImpl/0.0.1440.900@0.0.1440.900" timestamp="1584181877451" />
+<<<<<<< Updated upstream
     <state width="1398" height="243" key="GridCell.Tab.0.bottom" timestamp="1585222893647">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -453,6 +485,31 @@
     <state width="1398" height="243" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585222893647" />
     <state width="1398" height="305" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1585155339568" />
     <state width="1398" height="301" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1585159015276" />
+=======
+    <state width="1398" height="195" key="GridCell.Tab.0.bottom" timestamp="1585216287686">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="195" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1585216287686" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1584992212692" />
+    <state width="1398" height="195" key="GridCell.Tab.0.center" timestamp="1585216287685">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="195" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1585216287685" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1584229251182" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1584992212691" />
+    <state width="1398" height="195" key="GridCell.Tab.0.left" timestamp="1585216287684">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="195" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1585216287684" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1584229251181" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1584992212690" />
+    <state width="1398" height="195" key="GridCell.Tab.0.right" timestamp="1585216287686">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1398" height="195" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1585216287686" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1584229251183" />
+>>>>>>> Stashed changes
     <state width="1398" height="245" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1584992212691" />
     <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1584918934916">
       <screen x="0" y="0" width="1440" height="900" />
@@ -487,17 +544,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="229" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1585134420275" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585136360261">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1585140445378">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585136360261" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1585140445378" />
     <state x="399" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1584960877762">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="399" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1584960877762" />
-    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585086036051">
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585225499107">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
+<<<<<<< Updated upstream
     <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1585086036051" />
     <state x="469" y="328" width="710" height="293" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1585175463021">
       <screen x="0" y="0" width="1440" height="900" />
@@ -505,6 +563,15 @@
     <state x="469" y="328" width="710" height="293" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1440.900@0.0.1440.900" timestamp="1585175463021" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+=======
+    <state x="509" y="374" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1585225499107" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/NBU_project$RandomForestRegressor.coverage" NAME="RandomForestRegressor Coverage Results" MODIFIED="1585077897831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
+    <SUITE FILE_PATH="coverage/NBU_project$test_model_our_test_data_.coverage" NAME="test_model(our test data) Coverage Results" MODIFIED="1585167757616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$.coverage" NAME="прп Coverage Results" MODIFIED="1585084349496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_.coverage" NAME="test_model(nbu test data) Coverage Results" MODIFIED="1584459723943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
     <SUITE FILE_PATH="coverage/NBU_project$test.coverage" NAME="test Coverage Results" MODIFIED="1585135597400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
     <SUITE FILE_PATH="coverage/NBU_project$continue_train.coverage" NAME="continue_train Coverage Results" MODIFIED="1585154975515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/NBU_project$LogisticRegression.coverage" NAME="LogisticRegression Coverage Results" MODIFIED="1585176220918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
@@ -522,5 +589,15 @@
     <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_.coverage" NAME="test_model(nbu test data) Coverage Results" MODIFIED="1584459723943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NBU_project$Model1.coverage" NAME="Model1 Coverage Results" MODIFIED="1585044484365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
     <SUITE FILE_PATH="coverage/NBU_project$Model.coverage" NAME="Model Coverage Results" MODIFIED="1585078568300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
+<<<<<<< Updated upstream
+=======
+    <SUITE FILE_PATH="coverage/NBU_project$prepare.coverage" NAME="prepare Coverage Results" MODIFIED="1585078139182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
+    <SUITE FILE_PATH="coverage/NBU_project$way.coverage" NAME="way Coverage Results" MODIFIED="1585135842588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NBU_project$LogisticRegression.coverage" NAME="LogisticRegression Coverage Results" MODIFIED="1585045042007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
+    <SUITE FILE_PATH="coverage/NBU_project$clean.coverage" NAME="clean Coverage Results" MODIFIED="1585078018065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/cleaner" />
+    <SUITE FILE_PATH="coverage/NBU_project$model_parameters.coverage" NAME="model_parameters Coverage Results" MODIFIED="1584967623140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/model" />
+    <SUITE FILE_PATH="coverage/NBU_project$interface.coverage" NAME="interface Coverage Results" MODIFIED="1585176739435" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/interface" />
+    <SUITE FILE_PATH="coverage/NBU_project$test_model_nbu_test_data_with_answ_.coverage" NAME="test_model(nbu test data with answ) Coverage Results" MODIFIED="1585216287658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+>>>>>>> Stashed changes
   </component>
 </project>
