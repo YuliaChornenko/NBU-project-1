@@ -62,7 +62,7 @@ class PrepareText:
         encoder = LabelEncoder()
         encoder.fit(y_train)
         y_train = encoder.transform(y_train)
-        y_test = encoder.transform(y_test)
+        #y_test = encoder.transform(y_test)
 
         num_classes = np.max(y_train) + 1
 
